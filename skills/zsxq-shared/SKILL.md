@@ -70,7 +70,26 @@ zsxq-cli api call get_user_footprints --params '{"user_id":"123456","group_id":"
 
 # 推荐：对通用 HTTP API 使用显式参数的 raw 子命令
 zsxq-cli api raw --method GET --path /v2/groups/123456789/topics --query '{"count":10}'
+
+# --body 支持简写，自动包装 req_data
+zsxq-cli api raw --method PUT --path /v2/topics/123 --body '{"text":"新内容"}'
 ```
+
+> `api raw` 响应已去除三层嵌套，直接返回数据内容。
+
+## 链接拼接
+
+当用户需要分享链接时，使用以下模板拼接。输出时同时提供电脑端和手机端两个版本。
+
+### 主题链接
+
+- 电脑端：`https://wx.zsxq.com/group/{group_id}/topic/{topic_id}`
+- 手机端：`https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id={topic_id}&group_id={group_id}`
+
+### 星球链接
+
+- 电脑端：`https://wx.zsxq.com/group/{group_id}`
+- 手机端：`https://wx.zsxq.com/mweb/views/topic/topic.html?group_id={group_id}`
 
 ## 安全规则
 

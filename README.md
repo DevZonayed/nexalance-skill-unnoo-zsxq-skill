@@ -24,9 +24,9 @@
 - **星球管理**：列出已加入的星球，搜索星球，查看标签和成员
 - **内容搜索**：按关键词搜索星球里的帖子、文章和提问
 - **主题查看**：查看主题详情、评论、点赞和标签信息
-- **发布互动**：发布主题、评论回复、回答提问
+- **发布互动**：发布主题、编辑主题、评论回复、回答提问
 - **标签操作**：查看标签，或为主题设置标签
-- **个人笔记**：创建笔记，查看历史记录
+- **个人笔记**：创建、编辑、查看、删除笔记
 - **账号信息**：查看个人资料和发帖足迹
 
 ### 典型使用场景
@@ -111,8 +111,8 @@ zsxq-cli auth status
 |-------|------|
 | `zsxq-shared` | 认证登录、诊断配置、安全规则（所有其他 Skill 自动加载） |
 | `zsxq-group` | 列出星球、浏览主题、查询标签、搜索成员 |
-| `zsxq-topic` | 搜索主题、查看详情、发布主题、评论、回答提问、设置精华和标签 |
-| `zsxq-note` | 创建个人笔记、查看笔记列表 |
+| `zsxq-topic` | 搜索主题、查看详情、发布主题、编辑主题、评论、回答提问、删除主题、设置精华和标签 |
+| `zsxq-note` | 创建、编辑、查看、删除个人笔记 |
 | `zsxq-user` | 查看账号信息、查询跨星球发过的主题足迹 |
 
 ---
@@ -132,7 +132,8 @@ zsxq-cli group +hashtags --group-id <id>      # 查看星球所有标签
 ```bash
 zsxq-cli topic +search --group-id <id> --query "关键词"   # 搜索主题
 zsxq-cli topic +detail --topic-id <id>                    # 查看主题详情
-zsxq-cli topic +create --group-id <id> --content "内容"   # 发布新主题
+zsxq-cli topic +create --group-id <id> --text "内容"      # 发布新主题
+zsxq-cli topic +edit   --topic-id <id> --text "新内容"    # 编辑主题
 zsxq-cli topic +reply  --topic-id <id> --text "评论"      # 发表评论
 zsxq-cli topic +answer --topic-id <id> --text "回答"      # 回答提问
 ```
@@ -140,8 +141,11 @@ zsxq-cli topic +answer --topic-id <id> --text "回答"      # 回答提问
 ### 个人笔记（zsxq-note）
 
 ```bash
-zsxq-cli note +list                    # 查看我的笔记列表
-zsxq-cli note +create --text "内容"   # 创建新笔记
+zsxq-cli note +list                              # 查看我的笔记列表
+zsxq-cli note +create --text "内容"              # 创建新笔记
+zsxq-cli note +detail --note-id <id>              # 查看笔记详情
+zsxq-cli note +edit   --note-id <id> --text "新"  # 编辑笔记
+zsxq-cli note +delete --note-id <id>              # 删除笔记
 ```
 
 ### 用户与足迹（zsxq-user）

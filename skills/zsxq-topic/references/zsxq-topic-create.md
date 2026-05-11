@@ -18,13 +18,20 @@
 zsxq-cli topic +create \
   --group-id 123456789 \
   --title "示例主题标题" \
-  --content "示例主题正文内容"
+  --text "示例主题正文内容"
 
 # 多行内容（使用 \n 换行）
 zsxq-cli topic +create \
   --group-id 123456789 \
   --title "示例主题标题" \
-  --content "第一段内容\n第二段内容"
+  --text "第一段内容\n第二段内容"
+
+# 带附件
+zsxq-cli topic +create \
+  --group-id 123456789 \
+  --title "示例主题标题" \
+  --text "示例内容" \
+  --files photo.jpg,report.pdf
 ```
 
 ## 参数
@@ -33,7 +40,8 @@ zsxq-cli topic +create \
 |------|------|------|
 | `--group-id <id>` | **是** | 目标星球 ID（从 `group +list` 获取） |
 | `--title <text>` | **是** | 主题标题 |
-| `--content <text>` | **是** | 主题正文内容，支持换行符 `\n` |
+| `--text <text>` | **是** | 主题正文内容，支持换行符 `\n` |
+| `--files <paths>` | 否 | 附件路径，多个用逗号分隔（图片/文件） |
 | `--json` | 否 | 输出原始 JSON（含新建 topic_id） |
 
 ## 输出
@@ -56,7 +64,7 @@ zsxq-cli topic +create \
 zsxq-cli group +list
 
 # 第二步：（可选）确认内容无误后执行
-zsxq-cli topic +create --group-id <id> --title "标题" --content "内容"
+zsxq-cli topic +create --group-id <id> --title "标题" --text "内容"
 
 # 第三步：验证发布结果
 zsxq-cli topic +detail --topic-id <新建的 topic_id>

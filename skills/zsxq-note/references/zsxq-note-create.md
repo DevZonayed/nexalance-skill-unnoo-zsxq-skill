@@ -4,7 +4,7 @@
 
 本 skill 对应 shortcut：`zsxq-cli note +create`。
 
-在知识星球创建一条个人文字笔记。笔记仅支持纯文本，不支持图片或富文本格式。
+在知识星球创建一条个人笔记，支持文本和图片附件。
 
 > [!CAUTION]
 > 这是**写入操作** —— 执行前确认笔记内容无误。
@@ -20,13 +20,17 @@ zsxq-cli note +create --text "示例笔记第一行\n示例笔记第二行"
 
 # JSON 格式输出（含新建 note_id）
 zsxq-cli note +create --text "示例笔记内容" --json
+
+# 带图片的笔记
+zsxq-cli note +create --text "记录" --files idea.jpg
 ```
 
 ## 参数
 
 | 参数 | 必填 | 说明 |
 |------|------|------|
-| `--text <text>` | **是** | 笔记内容（仅支持纯文本，不支持图片） |
+| `--text <text>` | **是** | 笔记内容 |
+| `--files <paths>` | 否 | 附件路径，多个用逗号分隔（仅图片） |
 | `--json` | 否 | 输出原始 JSON（含 note_id、create_time） |
 
 ## 输出
@@ -42,11 +46,11 @@ zsxq-cli note +create --text "示例笔记内容" --json
 
 ## 说明
 
-- 笔记为**纯文本**，不支持 Markdown 渲染、图片、链接卡片等富文本格式
 - 笔记与主题（Topic）是两类不同内容，笔记不属于任何星球
-- 当前 API 不支持编辑或删除笔记
 
 ## 参考
 
+- [zsxq-note-edit](zsxq-note-edit.md) — 编辑笔记
+- [zsxq-note-delete](zsxq-note-delete.md) — 删除笔记
 - [zsxq-topic-create](../../zsxq-topic/references/zsxq-topic-create.md) — 在星球内发布主题（帖子）
 - [zsxq-shared](../../zsxq-shared/SKILL.md)

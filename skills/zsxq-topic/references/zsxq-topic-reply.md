@@ -30,6 +30,12 @@ zsxq-cli topic +reply \
   --topic-id 111222333444 \
   --text "示例评论内容" \
   --json
+
+# 带附件的评论
+zsxq-cli topic +reply \
+  --topic-id 111222333444 \
+  --text "示例评论内容" \
+  --files screenshot.png
 ```
 
 ## 参数
@@ -39,6 +45,7 @@ zsxq-cli topic +reply \
 | `--topic-id <id>` | **是** | 主题 ID |
 | `--text <text>` | **是** | 评论内容 |
 | `--reply-to <id>` | 否 | 被回复的评论 ID（楼中楼）；省略则为顶层评论 |
+| `--files <paths>` | 否 | 附件路径，多个用逗号分隔 |
 | `--json` | 否 | 输出原始 JSON（含 comment_id、create_time 等） |
 
 ## 获取 comment_id

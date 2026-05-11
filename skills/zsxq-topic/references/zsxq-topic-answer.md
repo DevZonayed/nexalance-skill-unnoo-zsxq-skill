@@ -29,6 +29,12 @@ zsxq-cli topic +answer \
   --topic-id 111222333466 \
   --text "示例回答内容" \
   --json
+
+# 带附件的回答
+zsxq-cli topic +answer \
+  --topic-id 111222333466 \
+  --text "示例回答内容" \
+  --files diagram.png
 ```
 
 ## 参数
@@ -37,6 +43,7 @@ zsxq-cli topic +answer \
 |------|------|------|
 | `--topic-id <id>` | **是** | 主题 ID（必须是 `q&a` 类型） |
 | `--text <text>` | **是** | 回答正文 |
+| `--files <paths>` | 否 | 附件路径，多个用逗号分隔 |
 | `--json` | 否 | 输出原始 JSON |
 
 ## 查找待回答的提问

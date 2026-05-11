@@ -1,7 +1,7 @@
 ---
 name: zsxq-topic
 version: 1.0.0
-description: "知识星球主题管理：搜索主题、查看详情、发布帖子、发表评论、回答提问、删除主题、设置精华和标签。当用户需要查找内容、发帖、评论、回答问题、删除主题、或管理主题时使用。"
+description: "知识星球主题管理：搜索主题、查看详情、发布帖子、编辑主题、发表评论、回答提问、删除主题、设置精华和标签。当用户需要查找内容、发帖、编辑、评论、回答问题、删除主题、或管理主题时使用。"
 metadata:
   requires:
     bins: ["zsxq-cli"]
@@ -36,9 +36,9 @@ Group (group_id)
 
 ### 写入操作前必须确认
 
-发帖、评论、回答均为**不可撤销的公开操作**，执行前必须向用户确认：
+发帖、编辑、评论、回答均为**公开操作**，执行前必须向用户确认：
 1. 目标星球 / 主题（group_id / topic_id）
-2. 发布的内容（title / content / text）
+2. 发布的内容（text）
 
 ### topic_id 的获取
 
@@ -56,6 +56,7 @@ Shortcut 是对常用操作的高级封装（`zsxq-cli topic +<verb> [flags]`）
 | [`+search`](references/zsxq-topic-search.md) | 在星球内全文搜索主题，返回 topic_id / 类型 / 标题 / 时间表格 |
 | [`+detail`](references/zsxq-topic-detail.md) | 获取单条主题的完整详情（内容、评论数、点赞数、标签等） |
 | [`+create`](references/zsxq-topic-create.md) | 在指定星球发布新主题（帖子），需确认内容后执行 |
+| [`+edit`](references/zsxq-topic-edit.md) | 编辑自己发布的主题（正文、附件），需确认内容后执行 |
 | [`+reply`](references/zsxq-topic-reply.md) | 对主题发表评论，支持楼中楼回复，需确认内容后执行 |
 | [`+answer`](references/zsxq-topic-answer.md) | 对提问类主题（q&a）发布官方回答，需确认内容后执行 |
 
