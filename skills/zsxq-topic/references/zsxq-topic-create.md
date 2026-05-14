@@ -9,7 +9,7 @@
 > [!CAUTION]
 > 这是**公开写入操作** —— 发布后对星球成员可见。执行前必须向用户确认：
 > 1. 目标星球（group_id 和星球名称）
-> 2. 标题和内容
+> 2. 发布的内容
 
 ## 命令
 
@@ -17,19 +17,11 @@
 # 发布一条主题
 zsxq-cli topic +create \
   --group-id 123456789 \
-  --title "示例主题标题" \
   --text "示例主题正文内容"
 
-# 多行内容（使用 \n 换行）
+# 带附件（图片/文件，逗号分隔）
 zsxq-cli topic +create \
   --group-id 123456789 \
-  --title "示例主题标题" \
-  --text "第一段内容\n第二段内容"
-
-# 带附件
-zsxq-cli topic +create \
-  --group-id 123456789 \
-  --title "示例主题标题" \
   --text "示例内容" \
   --files photo.jpg,report.pdf
 ```
@@ -39,8 +31,7 @@ zsxq-cli topic +create \
 | 参数 | 必填 | 说明 |
 |------|------|------|
 | `--group-id <id>` | **是** | 目标星球 ID（从 `group +list` 获取） |
-| `--title <text>` | **是** | 主题标题 |
-| `--text <text>` | **是** | 主题正文内容，支持换行符 `\n` |
+| `--text <text>` | **是** | 主题正文内容，支持 `\n` 换行 |
 | `--files <paths>` | 否 | 附件路径，多个用逗号分隔（图片/文件） |
 | `--json` | 否 | 输出原始 JSON（含新建 topic_id） |
 
@@ -64,7 +55,7 @@ zsxq-cli topic +create \
 zsxq-cli group +list
 
 # 第二步：（可选）确认内容无误后执行
-zsxq-cli topic +create --group-id <id> --title "标题" --text "内容"
+zsxq-cli topic +create --group-id <id> --text "内容"
 
 # 第三步：验证发布结果
 zsxq-cli topic +detail --topic-id <新建的 topic_id>

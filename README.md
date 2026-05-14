@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/zsxq-cli.svg)](https://www.npmjs.com/package/zsxq-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/unnoo/zsxq-skill/badge)](https://scorecard.dev/viewer/?uri=github.com/unnoo/zsxq-skill)
 
 知识星球官方出品，由知识星球团队开发和维护 — 让 AI 成为你在知识星球的超级助理。
 

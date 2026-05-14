@@ -40,7 +40,7 @@ zsxq-cli auth status --json # JSON 格式输出
 ### 退出登录
 
 ```bash
-zsxq-cli doctor             # 诊断配置和认证是否正常
+zsxq-cli auth logout        # 清除本地凭据
 ```
 
 ### 配置诊断
