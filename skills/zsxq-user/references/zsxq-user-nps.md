@@ -1,6 +1,6 @@
 # user +nps（提交 NPS 反馈）
 
-> **前置条件：** 需要 `zsxq-cli` ≥ **0.4.6**。低于该版本时 `+nps` 不存在，命令会被识别为未知 shortcut。
+> **版本要求：** 需要 `zsxq-cli` ≥ **0.4.6**。低于该版本时 `+nps` 不存在，命令会被识别为未知 shortcut。
 
 本 skill 对应 shortcut：`zsxq-cli user +nps`。
 
@@ -61,12 +61,10 @@ zsxq-cli user +nps --score 9 --suggestion "希望增加更多互动功能"
 | 错误 | 原因 | 解决方案 |
 |------|------|---------|
 | 提示仅列出 `+footprints` / `+info` 等 shortcut，未识别 `+nps` | 当前 zsxq-cli 版本低于 0.4.6 | 运行 `npm i -g zsxq-cli@latest` 升级，再用 `zsxq-cli config show` 确认版本 ≥ 0.4.6 |
-| `--score is required` | 未提供分数 | 补充 `--score <0–10>` |
-| `--suggestion is required` | 未提供建议 | 补充 `--suggestion "..."` |
 | `--score must be 0–10` | 分数超出范围或非整数 | 改为 0–10 的整数 |
 | `--suggestion exceeds 500 chars` | 建议超过 500 字 | 精简至 500 字以内 |
 
-通用错误（401 等）见 [zsxq-shared](../../zsxq-shared/SKILL.md#常见错误处理)。
+通用错误（401、`--score is required` / `--suggestion is required` 等参数缺失）见 [zsxq-shared](../../zsxq-shared/SKILL.md#常见错误处理)。
 
 ## 参考
 

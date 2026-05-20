@@ -58,6 +58,10 @@ zsxq-cli 使用 **OAuth 2.0 设备授权码流程（RFC 8628）** 认证，token
 ```bash
 zsxq-cli api call get_self_info --params '{}'
 zsxq-cli api call search_groups --params '{"keyword":"Go语言"}'
+
+# 跨星球查询当前用户主题足迹（不传 group_id 即查所有星球）
+zsxq-cli api call get_user_footprints --params '{"user_id":"123456"}'
+# 限定单个星球
 zsxq-cli api call get_user_footprints --params '{"user_id":"123456","group_id":"123456789"}'
 ```
 
@@ -91,8 +95,8 @@ zsxq-cli api raw --method PUT --path /v2/topics/123 --body '{"text":"新内容"}
 ## 安全规则
 
 - **Token 是登录凭证**，禁止在终端明文输出或分享给他人
-- **写入/删除操作前必须确认用户意图**（发帖、评论、创建笔记等）
-- 不确定 group_id / topic_id 时，先用查询命令确认，再执行写入
+- **写入/删除操作前必须确认用户意图**（发帖、编辑、评论、回答、创建笔记、删除主题或笔记、提交 NPS 反馈等）
+- 不确定 group_id / topic_id / note_id 时，先用查询命令确认，再执行写入或删除
 
 ## 常见错误处理
 

@@ -42,10 +42,9 @@ zsxq-cli topic +search --group-id 123456789 --query "AI" --json
 
 | 症状 | 可能原因 | 处理 |
 |------|---------|------|
-| `--query is required` | 未传搜索关键词 | 补 `--query "..."` |
 | 返回空列表 | 关键词未命中或星球内容较少 | 换近义词或改用 `group +topics` 时间序浏览 |
 
-通用错误（401、`--group-id is required` 等）见 [zsxq-shared](../../zsxq-shared/SKILL.md#常见错误处理)。
+通用错误（401、`--group-id is required`、`--query is required` 等）见 [zsxq-shared](../../zsxq-shared/SKILL.md#常见错误处理)。
 
 ## 参考
 
