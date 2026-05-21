@@ -22,7 +22,7 @@ metadata:
 |----------|------|
 | [`+info`](references/zsxq-user-info.md) | 查看当前登录用户的完整个人资料，含 user_id、昵称、认证状态 |
 | [`+footprints`](references/zsxq-user-footprints.md) | 查看自己在所有星球发过的主题（跨星球足迹），支持分页 |
-| [`+nps`](references/zsxq-user-nps.md) | 提交 NPS 反馈（0–10 分推荐分数 + 必填文字建议，500 字以内），需确认内容后执行 |
+| [`+nps`](references/zsxq-user-nps.md) | 提交 NPS 反馈（1–10 分推荐分数 + 必填文字建议，500 字以内），需确认内容后执行 |
 
 ## 相关操作
 

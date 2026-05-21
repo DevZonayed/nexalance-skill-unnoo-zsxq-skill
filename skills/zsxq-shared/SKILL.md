@@ -100,7 +100,7 @@ zsxq-cli api raw --method PUT --path /v2/topics/123 --body '{"text":"新内容"}
 
 ## 常见错误处理
 
-下表覆盖所有 zsxq-cli 命令通用的错误。各命令的 reference 文档只列出与该命令直接相关的特殊错误（如 `--score must be 0–10`、`code: 100262 无权限删除`），通用错误一律回到这里。
+下表覆盖所有 zsxq-cli 命令通用的错误。各命令的 reference 文档只列出与该命令直接相关的特殊错误（如 `--score must be 1–10`、`code: 100262 无权限删除`），通用错误一律回到这里。
 
 | 错误 | 原因 | 解决方案 |
 |------|------|---------|

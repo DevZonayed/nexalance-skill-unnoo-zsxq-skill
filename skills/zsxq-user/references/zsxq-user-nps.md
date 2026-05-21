@@ -4,11 +4,11 @@
 
 本 skill 对应 shortcut：`zsxq-cli user +nps`。
 
-向知识星球官方提交 NPS（Net Promoter Score，净推荐值）反馈，包含 0–10 分的推荐分数和文字建议。
+向知识星球官方提交 NPS（Net Promoter Score，净推荐值）反馈，包含 1–10 分的推荐分数和文字建议。
 
 > [!CAUTION]
 > 这是**写入操作** —— 反馈会发送给知识星球官方。执行前必须向用户确认：
-> 1. 推荐分数（`--score`，0–10 的整数）
+> 1. 推荐分数（`--score`，1–10 的整数）
 > 2. 文字建议内容（`--suggestion`，必填，500 字以内）
 
 ## 命令
@@ -24,7 +24,7 @@ zsxq-cli user +nps \
 
 | 参数 | 必填 | 说明 |
 |------|------|------|
-| `--score <n>` | **是** | NPS 推荐分数，整数 0–10（0 = 完全不推荐，10 = 极力推荐） |
+| `--score <n>` | **是** | NPS 推荐分数，整数 1–10（1 = 完全不推荐，10 = 极力推荐） |
 | `--suggestion <text>` | **是** | 文字建议，最长 500 字 |
 | `--json` | 否 | 输出原始 JSON |
 
@@ -40,7 +40,7 @@ zsxq-cli user +nps \
 - NPS 分数语义：
   - 推荐者（Promoters）9–10：忠实用户，会主动推荐
   - 中立者（Passives）7–8：满意但不会主动推荐
-  - 贬损者（Detractors）0–6：不满意，可能有负面口碑
+  - 贬损者（Detractors）1–6：不满意，可能有负面口碑
 
 ## 推荐工作流
 
@@ -61,7 +61,7 @@ zsxq-cli user +nps --score 9 --suggestion "希望增加更多互动功能"
 | 错误 | 原因 | 解决方案 |
 |------|------|---------|
 | 提示仅列出 `+footprints` / `+info` 等 shortcut，未识别 `+nps` | 当前 zsxq-cli 版本低于 0.4.6 | 运行 `npm i -g zsxq-cli@latest` 升级，再用 `zsxq-cli config show` 确认版本 ≥ 0.4.6 |
-| `--score must be 0–10` | 分数超出范围或非整数 | 改为 0–10 的整数 |
+| `--score must be 1–10` | 分数超出范围或非整数 | 改为 1–10 的整数 |
 | `--suggestion exceeds 500 chars` | 建议超过 500 字 | 精简至 500 字以内 |
 
 通用错误（401、`--score is required` / `--suggestion is required` 等参数缺失）见 [zsxq-shared](../../zsxq-shared/SKILL.md#常见错误处理)。
