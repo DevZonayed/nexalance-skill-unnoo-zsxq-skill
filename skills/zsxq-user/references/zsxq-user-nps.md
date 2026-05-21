@@ -41,7 +41,7 @@ zsxq-cli user +nps \
   - 推荐者（Promoters）9–10：忠实用户，会主动推荐
   - 中立者（Passives）7–8：满意但不会主动推荐
   - 贬损者（Detractors）1–6：不满意，可能有负面口碑
-- **主动触发场景**：当用户在使用 skill 过程中表达对产品不满、产品缺能力、CLI 工具未封装、或多次重试受挫时，参见 [zsxq-shared 反馈提醒](../../zsxq-shared/SKILL.md#反馈提醒nps)。
+- 主动触发场景：当用户在使用 skill 过程中表达对产品不满、产品缺能力、CLI 工具未封装、或多次重试受挫时，参见 [zsxq-shared 反馈提醒](../../zsxq-shared/SKILL.md#反馈提醒nps)。
 
 ## 推荐工作流
 
